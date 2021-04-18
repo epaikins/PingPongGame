@@ -1,0 +1,72 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  background-color: whitesmoke;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+
+  flex-direction: column;
+  /* flex-wrap: nowrap; */
+}
+
+.progress-details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 800px;
+  margin-bottom: 20px;
+}
+
+.progress-bar {
+  width: 300px;
+  height: 20px;
+}
+
+.progress-level {
+  height: 20px;
+}
+
+.left {
+  border: 2px solid blue;
+  background-color: rgb(241, 241, 241);
+  padding: 2px;
+}
+
+.left-level {
+  background-color: rgb(93, 148, 250);
+  border-radius: 5px;
+  transition: width 0.6s ease-in-out;
+  width: 0px;
+}
+
+.progress-right h1 {
+  display: inline-block;
+  float: right;
+}
+
+h1 {
+  font-size: 20px;
+  font-family: poppins;
+}
+
+.right {
+  display: inline-block;
+  float: right;
+  border: 2px solid red;
+  background-color: rgb(241, 241, 241);
+  padding: 2px;
+}
+
+.right-level {
+  display: block;
+  float: right;
+  background-color: rgb(250, 85, 85);
+  border-radius: 5px;
+  transition: width 0.6s ease-in-out;
+  width: 0px;
+}

@@ -5,13 +5,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
     <title>PingPong</title>
 </head>
 
 <body>
 
-    
-    <canvas id="gameCanvas" width="800" height="600"></canvas>
+
+    <div class="flex">
+        <div class="progress-details">
+            <div class="progress-left">
+                <h1>Left Player</h1>
+                <div class="progress-bar left">
+                    <div id="left-pl" class="progress-level left-level"></div>
+                </div>
+            </div>
+            <div class="progress-right">
+                <h1>Right Player</h1>
+                <div class="progress-bar right">
+                    <div id="right-pl" class="progress-level right-level"></div>
+                </div>
+            </div>
+        </div>
+
+        <canvas id="gameCanvas" width="800" height="600"></canvas>
+    </div>
+
+
 
 
     <script src="scripts/script.js"></script>
