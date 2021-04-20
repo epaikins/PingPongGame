@@ -7,7 +7,7 @@ var ballSpeedY = 4;
 
 var player1Score = 0;
 var player2Score = 0;
-const WINNING_SCORE = prompt("Enter the score limit: ");
+const WINNING_SCORE = 4 // prompt("Enter the score limit: ");
 
 var showingWinScreen = false;
 
@@ -19,6 +19,8 @@ const PADDLE_HEIGHT = 100;
 
 let leftbar = document.querySelector('#left-pl');
 let rightbar = document.querySelector('#right-pl');
+
+let progressBarWidth = 790;
 
 function calculateMousePos(evt) {
     var rect = canvas.getBoundingClientRect();
@@ -95,6 +97,9 @@ function moveEverything() {
     ballX = ballX + ballSpeedX;
     ballY = ballY + ballSpeedY;
 
+    let rightValue = 0;
+    let leftValue = 0;
+
     if (ballX < 0) {
         if (ballY > paddle1Y &&
             ballY < paddle1Y + PADDLE_HEIGHT) {
@@ -105,7 +110,12 @@ function moveEverything() {
             ballSpeedY = deltaY * 0.35;
         } else {
             player2Score++; // must be BEFORE ballReset()
-            rightbar.style.width = (300 * (player2Score / WINNING_SCORE)) + 'px';
+            rightValue = (progressBarWidth * (player2Score / WINNING_SCORE));
+            if (rightValue > leftValue && rightValue > progressBarWidth / 2) {
+                leftbar.style.width = progressBarWidth - rightValue + 'px'
+            }
+            rightbar.style.width = rightValue + 'px';
+            console.log(leftValue);
             ballReset();
         }
     }
@@ -119,7 +129,13 @@ function moveEverything() {
             ballSpeedY = deltaY * 0.35;
         } else {
             player1Score++; // must be BEFORE ballReset()
-            leftbar.style.width = (300 * (player1Score / WINNING_SCORE)) + 'px';
+
+            leftValue = (progressBarWidth * (player1Score / WINNING_SCORE));
+            if (leftValue > rightValue && leftValue > progressBarWidth / 2) {
+                rightbar.style.width = progressBarWidth - leftValue + 'px'
+            }
+            leftbar.style.width = leftValue + 'px';
+
             ballReset();
         }
     }

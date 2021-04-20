@@ -23,7 +23,7 @@ body {
 }
 
 .progress-bar {
-  width: 300px;
+  width: 790px;
   height: 20px;
 }
 
@@ -38,6 +38,7 @@ body {
 }
 
 .left-level {
+  float: left;
   background-color: rgb(93, 148, 250);
   border-radius: 5px;
   transition: width 0.6s ease-in-out;
@@ -63,7 +64,7 @@ h1 {
 }
 
 .right-level {
-  display: block;
+  /* display: block; */
   float: right;
   background-color: rgb(250, 85, 85);
   border-radius: 5px;
